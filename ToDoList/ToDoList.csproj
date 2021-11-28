@@ -113,5 +113,11 @@
   <ItemGroup>
     <Resource Include="Resources\Buttons\BtnTasks.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeFirstLib\CodeFirstLib.csproj">
+      <Project>{ef53edf1-92b6-4cae-909b-28bf8b5fe78f}</Project>
+      <Name>CodeFirstLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
