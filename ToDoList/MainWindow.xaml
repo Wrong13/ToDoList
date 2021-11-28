@@ -44,8 +44,11 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Background="#C05805">
-            
+        <StackPanel Grid.Column="1" Background="#C05805" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,80,400,0">
+                <TextBlock Text="Мой день" Foreground="White"/>
+                <TextBlock x:Name="ThisMyDayDate" Text="Дата"/>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Background="White">
