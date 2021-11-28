@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Список дел" Height="450" Width="800" Icon="/Resources/Icon/Main.png" >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2" Background="White">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                <Button Background="{x:Null}" Foreground="Black" MinHeight="30" BorderThickness="0" HorizontalAlignment="Left" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Buttons/BtnSeg.png" Height="20" MinHeight="20" Margin="0,0,5,0"/>
+                        <TextBlock Text="Сегодняшний день"/>
+                    </StackPanel>
+                </Button>
+                <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Buttons/BtnMain.png" Height="20" Margin="0,0,5,0"/>
+                        <TextBlock Text="Обязательное"/>
+                    </StackPanel>
+                </Button>
+                <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Buttons/BtnPlans.png" Height="20"/>
+                        <TextBlock Text="Планы"/>
+                    </StackPanel>
+                </Button>
+                <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Buttons/BtnTasks.png" Height="20"/>
+                        <TextBlock Text="Задачи"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="#C05805">
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="White">
+            
+        </StackPanel>
         
     </Grid>
 </Window>
