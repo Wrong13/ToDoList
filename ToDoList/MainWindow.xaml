@@ -35,7 +35,7 @@
                         <TextBlock Text="Планы" FontSize="30"/>
                     </StackPanel>
                 </Button>
-                <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
+                <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image Source="/Resources/Buttons/BtnTasks.png" Height="50"/>
                         <TextBlock Text="Задачи" FontSize="30"/>
@@ -55,7 +55,13 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button Content="Добавить список"/>
+                <Button BorderThickness="0" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
+                    <TextBlock Text="Добавить список" FontSize="30"/>
+                    </StackPanel>
+                </Button>
+                    
             </StackPanel>
         </StackPanel>
         <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
