@@ -5,49 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
-        Title="Список дел" Height="450" Width="800" Icon="/Resources/Icon/Main.png" >
+        Title="Список дел" Height="450" MinHeight="450" MinWidth="800" Width="800" Icon="/Resources/Icon/Main.png" >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0*" MinWidth="350"/>
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
-            <RowDefinition/>
+            <RowDefinition Height="0.4*" MaxHeight="300"/>
+            <RowDefinition  />
         </Grid.RowDefinitions>
-        <StackPanel Grid.RowSpan="2" Background="White">
+        <StackPanel Grid.RowSpan="2" Background="White" Grid.ColumnSpan="1">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="30" BorderThickness="0" HorizontalAlignment="Left" >
+                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Buttons/BtnSeg.png" Height="20" MinHeight="20" Margin="0,0,5,0"/>
-                        <TextBlock Text="Сегодняшний день"/>
+                        <Image Source="/Resources/Buttons/BtnSeg.png" Height="50" MinHeight="30" Margin="0,0,5,0"/>
+                        <TextBlock Text="Сегодняшний день" FontSize="30"/>
                     </StackPanel>
                 </Button>
                 <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Buttons/BtnMain.png" Height="20" Margin="0,0,5,0"/>
-                        <TextBlock Text="Обязательное"/>
+                        <Image Source="/Resources/Buttons/BtnMain.png" Height="50" Margin="0,0,5,0"/>
+                        <TextBlock Text="Обязательное" FontSize="30"/>
                     </StackPanel>
                 </Button>
                 <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Buttons/BtnPlans.png" Height="20"/>
-                        <TextBlock Text="Планы"/>
+                        <Image Source="/Resources/Buttons/BtnPlans.png" Height="50"/>
+                        <TextBlock Text="Планы" FontSize="30"/>
                     </StackPanel>
                 </Button>
                 <Button MinHeight="30" BorderThickness="0" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/Buttons/BtnTasks.png" Height="20"/>
-                        <TextBlock Text="Задачи"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Resources/Buttons/BtnTasks.png" Height="50"/>
+                        <TextBlock Text="Задачи" FontSize="30"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
         </StackPanel>
-
-        <StackPanel Grid.Column="1" Background="#C05805" Margin="0,0,0,0" VerticalAlignment="Stretch">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,80,400,0">
-                <TextBlock Text="Мой день" Foreground="White"/>
-                <TextBlock x:Name="ThisMyDayDate" Text="Дата"/>
+        <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
+        <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,0,0,15">
+                <TextBlock Text="Мой день" Foreground="White" FontSize="40" MinWidth="180" MinHeight="54"/>
+                <TextBlock x:Name="ThisMyDayDate" Text="Дата" FontSize="35" Foreground="#FFA5B9B8"/>
             </StackPanel>
         </StackPanel>
 
