@@ -22,7 +22,7 @@ namespace ToDoList
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); //Тест
         }
     }
 }
