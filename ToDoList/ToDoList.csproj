@@ -94,5 +94,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon\Main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Buttons\BtnAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Buttons\BtnSeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Buttons\BtnMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Buttons\BtnPlans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Buttons\BtnTasks.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
