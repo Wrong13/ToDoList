@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CodeFirstLib;
 
 namespace ToDoList
 {
@@ -20,10 +21,13 @@ namespace ToDoList
     /// </summary>
     public partial class MainWindow : Window
     {
+        CodeFirstLib.Appcontext db;
         public MainWindow()
         {
             InitializeComponent(); 
             GetThisDate();
+            db = new CodeFirstLib.Appcontext();
+            LoadList();
         }
         private void GetThisDate()
         {
@@ -32,6 +36,15 @@ namespace ToDoList
             timer.IsEnabled = true;
             timer.Tick += (o, e) => { ThisMyDayDate.Text = DateTime.Now.ToString(); };
             timer.Start();
+        }
+        private void LoadList()
+        {
+            lbList.ItemsSource = (from x in db.Lists
+                                  select new
+                                  {
+                                      CatList = x.NameLists
+                                  }).ToList();
+            
         }
     }
 }

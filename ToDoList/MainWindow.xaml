@@ -43,13 +43,13 @@
                 </Button>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left">
-                <ScrollViewer>
+                <ScrollViewer Margin="5,10,0,10">
                     <ItemsControl x:Name="lbList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
                                     <Image Source="{Binding Img}"/>
-                                    <TextBlock Text="{Binding CatList}"/>
+                                    <TextBlock Text="{Binding CatList}" FontSize="30"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -73,7 +73,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Background="White">
-            
+           
+
         </StackPanel>
         
     </Grid>
