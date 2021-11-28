@@ -42,6 +42,21 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
+            <StackPanel HorizontalAlignment="Left">
+                <ScrollViewer>
+                    <ItemsControl x:Name="lbList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Img}"/>
+                                    <TextBlock Text="{Binding CatList}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button Content="Добавить список"/>
+            </StackPanel>
         </StackPanel>
         <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
         <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
