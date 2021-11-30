@@ -9,8 +9,6 @@ namespace CodeFirstLib
 {
     public class Appcontext : DbContext
     {
-        
-
         public DbSet<Does> Does { get; set; }
         public DbSet<Lists> Lists { get; set; }
     }

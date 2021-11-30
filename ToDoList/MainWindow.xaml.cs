@@ -29,6 +29,7 @@ namespace ToDoList
             db = new CodeFirstLib.Appcontext();
             LoadList();
         }
+
         private void GetThisDate()
         {
             var timer = new System.Windows.Threading.DispatcherTimer();
@@ -45,6 +46,12 @@ namespace ToDoList
                                       CatList = x.NameLists
                                   }).ToList();
             
+        }
+
+        private void AddList_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.AddListWindow addListWindow = new Windows.AddListWindow();
+            addListWindow.ShowDialog();
         }
     }
 }
