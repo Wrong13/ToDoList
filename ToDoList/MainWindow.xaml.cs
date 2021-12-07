@@ -38,7 +38,7 @@ namespace ToDoList
             timer.Tick += (o, e) => { ThisMyDayDate.Text = DateTime.Now.ToString(); };
             timer.Start();
         }
-        private void LoadList()
+        public void LoadList()
         {
             lbList.ItemsSource = (from x in db.Lists
                                   select new
@@ -51,6 +51,7 @@ namespace ToDoList
         private void AddList_Click(object sender, RoutedEventArgs e)
         {
             Windows.AddListWindow addListWindow = new Windows.AddListWindow();
+            this.Close();
             addListWindow.ShowDialog();
         }
     }

@@ -33,6 +33,9 @@ namespace ToDoList.Windows
             list.NameLists = ListAddBox.Text;
             db.Lists.Add(list);
             db.SaveChanges();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.LoadList();
+            mainWindow.Show();
             this.Close();
         }
     }
