@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appcontext.cs" />
+    <Compile Include="AppViewModel.cs" />
     <Compile Include="Does.cs" />
     <Compile Include="Lists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
