@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CodeFirstLib;
+
 
 namespace ToDoList
 {
@@ -21,13 +21,14 @@ namespace ToDoList
     /// </summary>
     public partial class MainWindow : Window
     {
-        CodeFirstLib.Appcontext db;
+        CodeFirst.Appcontext db;
         public MainWindow()
         {
             InitializeComponent(); 
             GetThisDate();
-            db = new CodeFirstLib.Appcontext();
+            db = new CodeFirst.Appcontext();
             LoadList();
+            this.DataContext =  new CodeFirst.AppViewModel();
         }
 
         private void GetThisDate()
@@ -50,9 +51,7 @@ namespace ToDoList
 
         private void AddList_Click(object sender, RoutedEventArgs e)
         {
-            Windows.AddListWindow addListWindow = new Windows.AddListWindow();
-            this.Close();
-            addListWindow.ShowDialog();
+            
         }
     }
 }

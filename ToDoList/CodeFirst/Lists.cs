@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
 
-namespace CodeFirstLib
+namespace ToDoList.CodeFirst
 {
     public class Lists
     {

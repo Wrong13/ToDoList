@@ -13,7 +13,7 @@
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Введите имя новой задачи" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
-        <TextBox Grid.Row="1" FontSize="20" x:Name="ListAddBox"/>
+        <TextBox Grid.Row="1" FontSize="20" x:Name="ListAddBox" Text="{Binding NameLists}"/>
         <Button Grid.Row="2" Content="Добавить" FontSize="25" x:Name="AddList" Click="AddList_Click"/>
     </Grid>
 </Window>

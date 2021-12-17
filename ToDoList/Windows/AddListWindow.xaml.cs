@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using CodeFirstLib;
+using ToDoList.CodeFirst;
 
 namespace ToDoList.Windows
 {
@@ -20,23 +20,17 @@ namespace ToDoList.Windows
     /// </summary>
     public partial class AddListWindow : Window
     {
-        Appcontext db;
-        public AddListWindow()
+        public Lists Lists { get; private set; }
+        public AddListWindow(Lists lists)
         {
             InitializeComponent();
-            db = new Appcontext();
+            Lists = lists;
+            this.DataContext = Lists;
         }
 
         private void AddList_Click(object sender, RoutedEventArgs e)
         {
-            CodeFirstLib.Lists list = new Lists();
-            list.NameLists = ListAddBox.Text;
-            db.Lists.Add(list);
-            db.SaveChanges();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.LoadList();
-            mainWindow.Show();
-            this.Close();
+            this.DialogResult = true;
         }
     }
 }

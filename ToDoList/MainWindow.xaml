@@ -44,7 +44,7 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Left">
                 <ScrollViewer Margin="5,10,0,10">
-                    <ItemsControl x:Name="lbList">
+                    <ItemsControl x:Name="lbList" ItemsSource="{Binding Lists}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
@@ -55,7 +55,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Click="AddList_Click">
+                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddCommand}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
                     <TextBlock Text="Добавить список" FontSize="30"/>

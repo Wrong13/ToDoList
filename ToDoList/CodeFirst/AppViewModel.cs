@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Data.Entity;
 using ToDoList.Windows;
 
-namespace CodeFirstLib
+namespace ToDoList.CodeFirst
 {
     public class AppViewModel : INotifyPropertyChanged
     {
@@ -35,11 +35,17 @@ namespace CodeFirstLib
         {
             get
             {
-                return addCommand ?? 
+                return addCommand ??
                     (addCommand = new RelayCommand((o) =>
                     {
                         AddListWindow addListWindow = new AddListWindow(new Lists());
-                    }
+                        if (addListWindow.ShowDialog() == true)
+                        {
+                            Lists lists = addListWindow.Lists;
+                            db.Lists.Add(lists);
+                            db.SaveChanges();
+                        }
+                    }));
             }
         }
 
