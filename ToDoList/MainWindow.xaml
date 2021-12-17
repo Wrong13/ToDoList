@@ -42,26 +42,31 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left">
-                <ScrollViewer Margin="5,10,0,10">
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,0,10">
+                <ScrollViewer Margin="5,10,0,10" MinWidth="225" MinHeight="40"  MaxHeight="200" MaxWidth="450">
                     <ItemsControl x:Name="lbList" ItemsSource="{Binding Lists}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <Image Source="{Binding Img}"/>
-                                    <TextBlock Text="{Binding CatList}" FontSize="30"/>
-                                </StackPanel>
+                                <Button>
+                                    <StackPanel>
+                                        <Image Source="{Binding Img}"/>
+                                        <TextBlock Text="{Binding CatList}" FontSize="30"/>
+                                    </StackPanel>
+                                </Button>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddCommand}">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
-                    <TextBlock Text="Добавить список" FontSize="30"/>
+
+
+            </StackPanel>
+            <StackPanel Margin="0,20,0,10">
+                <Button Margin="0,0,10,10" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddCommand}" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
+                        <TextBlock Text="Добавить список" FontSize="30"/>
                     </StackPanel>
                 </Button>
-                    
             </StackPanel>
         </StackPanel>
         <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
@@ -73,8 +78,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Background="White">
-           
 
+            
         </StackPanel>
         
     </Grid>
