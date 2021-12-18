@@ -14,10 +14,12 @@ namespace ToDoList.CodeFirst
     public class AppViewModel : INotifyPropertyChanged
     {
         Appcontext db;
-        private Lists selectedList;
+        
         IEnumerable<Lists> lists;
 
-        RelayCommand addCommand;
+        RelayCommand addlist;
+        RelayCommand dellist;
+
 
         public IEnumerable<Lists> List
         {
@@ -31,12 +33,12 @@ namespace ToDoList.CodeFirst
             List = db.Lists.Local.ToBindingList();
         }
 
-        public RelayCommand AddCommand
+        public RelayCommand AddList
         {
             get
             {
-                return addCommand ??
-                    (addCommand = new RelayCommand((o) =>
+                return addlist ??
+                    (addlist = new RelayCommand((o) =>
                     {
                         AddListWindow addListWindow = new AddListWindow(new Lists());
                         if (addListWindow.ShowDialog() == true)
@@ -46,6 +48,23 @@ namespace ToDoList.CodeFirst
                             db.SaveChanges();
                         }
                     }));
+            }
+        }
+
+        public RelayCommand DelList
+        {
+            get
+            {
+                return dellist ??
+                    (dellist = new RelayCommand((selectedItem) =>
+                    {
+                        if (selectedItem == null)
+                            return;
+
+                        Lists list = selectedItem as Lists;
+                        db.Lists.Remove(list);
+                        db.SaveChanges();
+                    })) ;
             }
         }
 

@@ -21,13 +21,10 @@ namespace ToDoList
     /// </summary>
     public partial class MainWindow : Window
     {
-        CodeFirst.Appcontext db;
         public MainWindow()
         {
             InitializeComponent(); 
-            GetThisDate();
-            db = new CodeFirst.Appcontext();
-            LoadList();
+            GetThisDate(); 
             this.DataContext =  new CodeFirst.AppViewModel();
         }
 
@@ -39,19 +36,8 @@ namespace ToDoList
             timer.Tick += (o, e) => { ThisMyDayDate.Text = DateTime.Now.ToString(); };
             timer.Start();
         }
-        public void LoadList()
-        {
-            lbList.ItemsSource = (from x in db.Lists
-                                  select new
-                                  {
-                                      CatList = x.NameLists
-                                  }).ToList();
-            
-        }
+        
 
-        private void AddList_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
     }
 }

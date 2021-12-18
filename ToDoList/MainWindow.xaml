@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*" MaxHeight="300"/>
             <RowDefinition  />
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.RowSpan="2" Background="White" Grid.ColumnSpan="1">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
@@ -43,30 +44,21 @@
                 </Button>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" Margin="0,0,0,10">
-                <ScrollViewer Margin="5,10,0,10" MinWidth="225" MinHeight="40"  MaxHeight="200" MaxWidth="450">
-                    <ItemsControl x:Name="lbList" ItemsSource="{Binding Lists}">
-                        <ItemsControl.ItemTemplate>
+                <ScrollViewer>
+                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Button>
-                                    <StackPanel>
-                                        <Image Source="{Binding Img}"/>
-                                        <TextBlock Text="{Binding CatList}" FontSize="30"/>
-                                    </StackPanel>
-                                </Button>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding NameLists}" FontSize="25" />
+                                    <TextBlock Text="{Binding Description}" FontSize="13" />
+                                </StackPanel>
                             </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </ScrollViewer>
-
-
             </StackPanel>
             <StackPanel Margin="0,20,0,10">
-                <Button Margin="0,0,10,10" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddCommand}" Grid.Row="1">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                        <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
-                        <TextBlock Text="Добавить список" FontSize="30"/>
-                    </StackPanel>
-                </Button>
+                
             </StackPanel>
         </StackPanel>
         <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
@@ -81,6 +73,20 @@
 
             
         </StackPanel>
-        
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal">
+            <Button Margin="0,20,5,0" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddList}" Grid.Row="2">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
+                    <TextBlock Text="Добавить список" FontSize="30"/>
+                </StackPanel>
+            </Button>
+
+            <Button Margin="0,20,0,0" CommandParameter="{Binding ElementName=Listslist, Path=SelectedItem}"  Command="{Binding DelList}" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Image Height="50"/>
+                    <TextBlock Text="Удалить список" FontSize="30"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
