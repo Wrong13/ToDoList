@@ -17,7 +17,7 @@ namespace CodeFirstLib
         [MaxLength(150)]
         public string Doe { get; set; }
         public string Description { get; set; }
-        [Key]
+        
         public int ListsID { get; set; }
         public string Date { get; set; }
     }
