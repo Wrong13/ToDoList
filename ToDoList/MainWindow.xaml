@@ -43,23 +43,20 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Margin="0,0,0,10">
-                <ScrollViewer>
-                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}">
+            <StackPanel HorizontalAlignment="Left" Margin="10,10,10,10" >
+                <ListBox x:Name="Listslist" ItemsSource="{Binding List}">
+                        
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding NameLists}" FontSize="25" />
+                                <StackPanel Margin="0,0,0,0">
+                                    <TextBlock Text="{Binding NameLists}" FontSize="25"/>
                                     <TextBlock Text="{Binding Description}" FontSize="13" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                </ScrollViewer>
             </StackPanel>
-            <StackPanel Margin="0,20,0,10">
-                
-            </StackPanel>
+            
         </StackPanel>
         <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
         <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
@@ -73,7 +70,7 @@
 
             
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal">
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Margin="0,20,5,0" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddList}" Grid.Row="2">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
                     <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
@@ -81,10 +78,16 @@
                 </StackPanel>
             </Button>
 
-            <Button Margin="0,20,0,0" CommandParameter="{Binding ElementName=Listslist, Path=SelectedItem}"  Command="{Binding DelList}" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
+            <Button Margin="0,20,5,0" CommandParameter="{Binding ElementName=Listslist, Path=SelectedItem}"  Command="{Binding DelList}" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
                     <Image Height="50"/>
                     <TextBlock Text="Удалить список" FontSize="30"/>
+                </StackPanel>
+            </Button>
+            <Button Margin="0,20,0,0" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" CommandParameter="{Binding ElementName=Listslist, Path=SelectedItem}"  Command="{Binding EditList}">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal" >
+                    <Image Height="50"/>
+                    <TextBlock Text="Редактировать" FontSize="30"/>
                 </StackPanel>
             </Button>
         </StackPanel>

@@ -19,7 +19,7 @@ namespace ToDoList.CodeFirst
 
         RelayCommand addlist;
         RelayCommand dellist;
-
+        RelayCommand editlist;
 
         public IEnumerable<Lists> List
         {
@@ -65,6 +65,37 @@ namespace ToDoList.CodeFirst
                         db.Lists.Remove(list);
                         db.SaveChanges();
                     })) ;
+            }
+        }
+
+        public RelayCommand EditList
+        {
+            get
+            {
+                return editlist ??
+                    (editlist = new RelayCommand((selectedItem) =>
+                    {
+                        if (selectedItem == null) return;
+                        Lists lists = selectedItem as Lists;
+                        Lists list = new Lists()
+                        {
+                            ID = lists.ID,
+                            NameLists = lists.NameLists,
+                            Description = lists.Description,
+                            Img = lists.Img
+                        };
+                        Windows.AddListWindow addList = new AddListWindow(list);
+                        if (addList.ShowDialog() == true)
+                        {
+                            lists = db.Lists.Find(addList.Lists.ID);
+                            if (lists != null)
+                            {
+                                lists.NameLists = addList.Lists.NameLists;
+                                db.Entry(lists).State = EntityState.Modified;
+                                db.SaveChanges();
+                            }
+                        }
+                    }));
             }
         }
 
