@@ -91,6 +91,7 @@ namespace ToDoList.CodeFirst
                             if (lists != null)
                             {
                                 lists.NameLists = addList.Lists.NameLists;
+                                lists.Description = addList.Lists.Description;
                                 db.Entry(lists).State = EntityState.Modified;
                                 db.SaveChanges();
                             }
