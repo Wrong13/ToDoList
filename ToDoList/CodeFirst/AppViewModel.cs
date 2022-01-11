@@ -84,7 +84,7 @@ namespace ToDoList.CodeFirst
                             Description = lists.Description,
                             Img = lists.Img
                         };
-                        Windows.AddListWindow addList = new AddListWindow(list);
+                        Windows.DoWindow addList = new DoWindow(list);
                         if (addList.ShowDialog() == true)
                         {
                             lists = db.Lists.Find(addList.Lists.ID);

@@ -73,6 +73,9 @@
     <Compile Include="Windows\AddListWindow.xaml.cs">
       <DependentUpon>AddListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DoWindow.xaml.cs">
+      <DependentUpon>DoWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\AddListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
