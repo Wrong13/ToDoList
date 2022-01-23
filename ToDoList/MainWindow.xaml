@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoList"
         mc:Ignorable="d"
-        Title="Список дел" Height="450" MinHeight="450" MinWidth="800" Width="800" Icon="/Resources/Icon/Main.png" >
+        Title="Список дел" Height="500" MinHeight="500" MinWidth="800" Width="800" Icon="/Resources/Icon/Main.png" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*" MinWidth="350"/>
@@ -13,10 +13,11 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*" MaxHeight="300"/>
-            <RowDefinition  />
+            <RowDefinition  Height="*" MaxHeight="130"/>
+            <RowDefinition/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.RowSpan="2" Background="White" Grid.ColumnSpan="1" Margin="0,0,0,10" >
+        <StackPanel Grid.RowSpan="2" Background="White" Grid.ColumnSpan="1" >
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                 <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
@@ -43,40 +44,19 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Margin="10,10,10,10" >
-                <ScrollViewer>
-                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}">
-
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,0">
-                                    <TextBlock Text="{Binding NameLists}" FontSize="25"/>
-                                    <TextBlock Text="{Binding Description}" FontSize="13" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </ScrollViewer>
-            </StackPanel>
-        </StackPanel>
-        
-        <StackPanel  Background="#C05805" Grid.Column="2"  Margin="0,0,0,0" MaxHeight="300"/>
-        <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,0,0,15">
-                <TextBlock Text="Мой день" Foreground="White" FontSize="40" MinWidth="180" MinHeight="54"/>
-                <TextBlock x:Name="ThisMyDayDate" Text="Дата" FontSize="35" Foreground="#FFA5B9B8"/>
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1" Background="White">
             
-
-
-
-
-
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Column="1" Grid.RowSpan="2">
+            <StackPanel  Background="#C05805"  Margin="0,0,0,0" MaxHeight="200">
+            <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,0,0,15">
+                    <TextBlock Text="Мой день" Foreground="White" FontSize="40" MinWidth="180" MinHeight="54"/>
+                    <TextBlock x:Name="ThisMyDayDate" Text="Дата" FontSize="35" Foreground="#FFA5B9B8"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Margin="0,20,5,0" Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left" x:Name="AddList" Command="{Binding AddList}" Grid.Row="2">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
                     <Image Source="/Resources/Buttons/BtnAdd.png" Height="50"/>
@@ -97,5 +77,23 @@
                 </StackPanel>
             </Button>
         </StackPanel>
+        
+        <Border Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+           
+                <ScrollViewer VerticalScrollBarVisibility="Visible">
+                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}" >
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,0">
+                                    <TextBlock Text="{Binding NameLists}" FontSize="25"/>
+                                    <TextBlock Text="{Binding Description}" FontSize="13" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            
+        </Border>
     </Grid>
 </Window>
