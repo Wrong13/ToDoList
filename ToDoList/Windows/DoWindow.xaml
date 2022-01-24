@@ -11,12 +11,21 @@
             <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Имя списка"/>
-                <TextBox Text="{Binding NameLists}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBox Text="{Binding NameLists}" FontSize="30"/>
+                <TextBox Text="{Binding Description}" FontSize="16"/>
             </StackPanel>
         </StackPanel>
-        <Button Width="100" Margin="100,235,100,160" Click="Button_Click"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button Content="Сохранить" FontSize="20" Click="Button_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
