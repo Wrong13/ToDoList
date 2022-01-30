@@ -19,30 +19,22 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.RowSpan="2" Background="White" Grid.ColumnSpan="1" >
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Buttons/BtnSeg.png" Height="50" MinHeight="30" Margin="0,0,5,0"/>
                         <TextBlock Text="Сегодняшний день" FontSize="30"/>
                     </StackPanel>
-                </Button>
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Buttons/BtnMain.png" Height="50" Margin="0,0,5,0"/>
                         <TextBlock Text="Обязательное" FontSize="30"/>
                     </StackPanel>
-                </Button>
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Buttons/BtnPlans.png" Height="50"/>
                         <TextBlock Text="Планы" FontSize="30"/>
                     </StackPanel>
-                </Button>
-                <Button Background="{x:Null}" Foreground="Black" MinHeight="50" BorderThickness="0" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="/Resources/Buttons/BtnTasks.png" Height="50"/>
                         <TextBlock Text="Задачи" FontSize="30"/>
                     </StackPanel>
-                </Button>
             </StackPanel>
             
         </StackPanel>
@@ -78,10 +70,10 @@
             </Button>
         </StackPanel>
         
-        <Border Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Border Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,0,0">
            
-                <ScrollViewer VerticalScrollBarVisibility="Visible">
-                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}" >
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0,0,0,0">
+                    <ListBox x:Name="Listslist" ItemsSource="{Binding List}" Margin="0,0,0,0">
 
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -89,11 +81,12 @@
                                     <TextBlock Text="{Binding NameLists}" FontSize="25"/>
                                     <TextBlock Text="{Binding Description}" FontSize="13" />
                                 </StackPanel>
-                            </DataTemplate>
+                        </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </ScrollViewer>
             
         </Border>
+       
     </Grid>
 </Window>

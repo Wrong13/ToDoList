@@ -16,6 +16,7 @@ namespace ToDoList.CodeFirst
         Appcontext db;
         
         IEnumerable<Lists> lists;
+        IEnumerable<Does> doe;
 
         RelayCommand addlist;
         RelayCommand dellist;
@@ -26,11 +27,18 @@ namespace ToDoList.CodeFirst
             get { return lists; }
             set { lists = value; OnPropertyChanged("List"); }
         }
+        public IEnumerable<Does> Doe
+        {
+            get { return doe; }
+            set { doe = value; OnPropertyChanged("Doe"); }
+        }
         public AppViewModel()
         {
             db = new Appcontext();
             db.Lists.Load();
             List = db.Lists.Local.ToBindingList();
+            db.Does.Load();
+            Doe = db.Does.Local.ToBindingList();
         }
 
         public RelayCommand AddList
@@ -84,7 +92,7 @@ namespace ToDoList.CodeFirst
                             Description = lists.Description,
                             Img = lists.Img
                         };
-                        Windows.DoWindow addList = new DoWindow(list);
+                        Windows.AddListWindow addList = new AddListWindow(list);
                         if (addList.ShowDialog() == true)
                         {
                             lists = db.Lists.Find(addList.Lists.ID);
